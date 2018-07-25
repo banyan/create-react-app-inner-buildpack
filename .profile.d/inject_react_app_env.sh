@@ -7,14 +7,14 @@ set -e
 
 # Each bundle is generated with a unique hash name
 # to bust browser cache.
-js_bundle=/app/build/static/js/main.*.js
+js_bundle=/app/build/static/js/main*.js
 
 if [ -f $js_bundle ]
 then
 
   # Get exact filename.
   js_bundle_filename=`ls $js_bundle`
-  
+
   echo "Injecting runtime env into $js_bundle_filename (from .profile.d/inject_react_app_env.sh)"
 
   # Render runtime env vars into bundle.
